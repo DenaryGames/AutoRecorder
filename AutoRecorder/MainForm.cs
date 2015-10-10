@@ -30,8 +30,10 @@ namespace AutoRecorder
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Settings setting = new Settings();
-            setting.ReadSettings();
+            Settings settings = new Settings();
+            TelnetHandler telnet = new TelnetHandler();
+
+            telnet.Connect();
         }
     }
 }
