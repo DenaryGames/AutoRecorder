@@ -50,7 +50,8 @@ namespace AutoRecorder
         {
             foreach(Recording record in list.Records)
             {
-                listView.Items.Add(record.Title);
+                String[] row = { Convert.ToString(record.Enabled), record.DaysString, record.TimeString, record.Channel, record.Directory };
+                listView.Items.Add(record.Title).SubItems.AddRange(row);
                 listView.Update();
             }
         }

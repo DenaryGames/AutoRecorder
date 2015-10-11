@@ -79,6 +79,22 @@ namespace AutoRecorder
             }
         }
 
+        public String DaysString
+        {
+            get
+            {
+                return String.Join(", ", weekdays);
+            }
+        }
+
+        public String TimeString
+        {
+            get
+            {
+                return startHour + ":" + startMinute + " - " + endHour + ":" + endMinute;
+            }
+        }
+
 
     }
 }
