@@ -78,7 +78,7 @@ namespace AutoRecorder
                     endMinute = Convert.ToInt32(_hoursTemp[3]);
                 }
 
-                if (line.Contains("\"direcotry\":"))
+                if (line.Contains("\"directory\":"))
                 {
                     String[] _dir = line.Split(':');
 
@@ -94,7 +94,7 @@ namespace AutoRecorder
                     titleReady = true;
                 }
 
-                if (titleReady)
+                if (titleReady && !String.IsNullOrEmpty(title))
                 {
                     list.AddRecording(new Recording(title, enabled, channel, directory, weekdays, startHour, startMinute, endHour, endMinute));
                     titleReady = false;

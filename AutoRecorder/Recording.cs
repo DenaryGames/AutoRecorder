@@ -91,7 +91,12 @@ namespace AutoRecorder
         {
             get
             {
-                return startHour + ":" + startMinute + " - " + endHour + ":" + endMinute;
+                if(startHour == -1)
+                {
+                    return "";
+                }
+                string fmt = "00";
+                return startHour.ToString(fmt) + ":" + startMinute.ToString(fmt) + " - " + endHour.ToString(fmt) + ":" + endMinute.ToString(fmt);
             }
         }
 
