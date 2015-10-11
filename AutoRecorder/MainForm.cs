@@ -15,12 +15,13 @@ namespace AutoRecorder
         public MainForm()
         {
             InitializeComponent();
-            listView.Columns.Add("Nimi", 200);
-            listView.Items.Add("nakki");
-            listView.Items.Add("nakki");
-            listView.Items.Add("nakki");
-
-            listView.Update();
+            listView.Columns.Add("Title", 200);
+            listView.Columns.Add("Enabled", 60);
+            listView.Columns.Add("Days", 200);
+            listView.Columns.Add("Time", 150);
+            listView.Columns.Add("Channel", 70);
+            listView.Columns.Add("Directory", 200);
+            
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,6 +42,17 @@ namespace AutoRecorder
 
             reader.ReadRecords(@".\Automaatti.py");
 
+            this.ShowRecordings(list);
+
+        }
+
+        private void ShowRecordings(RecordingList list)
+        {
+            foreach(Recording record in list.Records)
+            {
+                listView.Items.Add(record.Title);
+                listView.Update();
+            }
         }
     }
 }
