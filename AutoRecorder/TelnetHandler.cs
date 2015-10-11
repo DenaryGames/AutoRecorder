@@ -22,6 +22,13 @@ namespace AutoRecorder
 
             tc.WriteLine("/etc/enigma2/AutoRecorder/reconf /etc/enigma2/AutoRecorder/SearchProfiles/Automaatti.prof >/etc/enigma2/AutoRecorder/SearchProfiles/AutomaattiOut.py");
 
+            ftp ftpClient = new ftp(@"ftp://vuultimo", "root", "dreambox");
+
+            ftpClient.download("/etc/enigma2/AutoRecorder/SearchProfiles/AutomaattiOut.py", @".\AutomaattiOut.py");
+
+            string fileDateTime = ftpClient.getFileCreatedDateTime("/etc/enigma2/AutoRecorder/SearchProfiles/AutomaattiOut.py");
+            string fileSize = ftpClient.getFileSize("/etc/enigma2/AutoRecorder/SearchProfiles/AutomaattiOut.py");
+
         }
         
     }
