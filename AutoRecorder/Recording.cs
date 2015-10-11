@@ -79,6 +79,14 @@ namespace AutoRecorder
             }
         }
 
+        public String[] Days
+        {
+            get
+            {
+                return weekdays;
+            }
+        }
+
         public String DaysString
         {
             get
@@ -97,6 +105,32 @@ namespace AutoRecorder
                 }
                 string fmt = "00";
                 return startHour.ToString(fmt) + ":" + startMinute.ToString(fmt) + " - " + endHour.ToString(fmt) + ":" + endMinute.ToString(fmt);
+            }
+        }
+
+        public String StartTimeString
+        {
+            get
+            {
+                if (startHour == -1)
+                {
+                    return "";
+                }
+                string fmt = "00";
+                return startHour.ToString(fmt) + ":" + startMinute.ToString(fmt);
+            }
+        }
+
+        public String EndTimeString
+        {
+            get
+            {
+                if (endHour == -1)
+                {
+                    return "";
+                }
+                string fmt = "00";
+                return endHour.ToString(fmt) + ":" + endMinute.ToString(fmt);
             }
         }
 

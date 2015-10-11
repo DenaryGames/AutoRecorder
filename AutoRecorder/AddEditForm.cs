@@ -49,6 +49,54 @@ namespace AutoRecorder
                     
                 }
 
+                cbStartTime.SelectedIndex = cbStartTime.FindStringExact(record.StartTimeString);
+                cbEndTime.SelectedIndex = cbEndTime.FindStringExact(record.EndTimeString);
+
+                chcEnabled.Checked = record.Enabled;
+
+                chcMon.Checked = false;
+                chcTue.Checked = false;
+                chcWed.Checked = false;
+                chcThu.Checked = false;
+                chcFri.Checked = false;
+                chcSat.Checked = false;
+                chcSun.Checked = false;
+
+                foreach (String day in record.Days)
+                {
+
+                    if (day.Contains("0"))
+                    {
+                        chcMon.Checked = true;
+                    }
+                    if (day.Contains("1"))
+                    {
+                        chcTue.Checked = true;
+                    }
+                    if (day.Contains("2"))
+                    {
+                        chcWed.Checked = true;
+                    }
+                    if (day.Contains("3"))
+                    {
+                        chcThu.Checked = true;
+                    }
+                    if (day.Contains("4"))
+                    {
+                        chcFri.Checked = true;
+                    }
+                    if (day.Contains("5"))
+                    {
+                        chcSat.Checked = true;
+                    }
+                    if (day.Contains("6"))
+                    {
+                        chcSun.Checked = true;
+                    }
+                    
+                }
+                
+
             }
         }
     }
