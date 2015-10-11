@@ -14,6 +14,7 @@ namespace AutoRecorder
     {
 
         RecordingList RecList;
+        Settings settings = new Settings();
 
         public MainForm()
         {
@@ -50,7 +51,7 @@ namespace AutoRecorder
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Settings settings = new Settings();
+            
             settings.ReadSettings();
             TelnetHandler telnet = new TelnetHandler(settings);
 
@@ -74,7 +75,7 @@ namespace AutoRecorder
                 ListViewItem lvItem = items[0];
                 int pos = lvItem.Index;
 
-                AddEditForm form = new AddEditForm(RecList.RecordingNumber(pos), true);
+                AddEditForm form = new AddEditForm(RecList.RecordingNumber(pos), true, settings.Channels);
                 form.ShowDialog(this);
             }
         }

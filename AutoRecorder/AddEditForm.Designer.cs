@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.cbChannel = new System.Windows.Forms.ComboBox();
-            this.cbStartTime = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbEndTime = new System.Windows.Forms.ComboBox();
-            this.txtDirectory = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chcMon = new System.Windows.Forms.CheckBox();
-            this.chcTue = new System.Windows.Forms.CheckBox();
-            this.chcWed = new System.Windows.Forms.CheckBox();
-            this.chcThu = new System.Windows.Forms.CheckBox();
-            this.chcFri = new System.Windows.Forms.CheckBox();
-            this.chcSat = new System.Windows.Forms.CheckBox();
-            this.chcSun = new System.Windows.Forms.CheckBox();
             this.chcEnabled = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chcSat = new System.Windows.Forms.CheckBox();
+            this.chcFri = new System.Windows.Forms.CheckBox();
+            this.chcThu = new System.Windows.Forms.CheckBox();
+            this.chcWed = new System.Windows.Forms.CheckBox();
+            this.chcTue = new System.Windows.Forms.CheckBox();
+            this.chcMon = new System.Windows.Forms.CheckBox();
+            this.txtDirectory = new System.Windows.Forms.TextBox();
+            this.cbEndTime = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbStartTime = new System.Windows.Forms.ComboBox();
+            this.cbChannel = new System.Windows.Forms.ComboBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chcSun = new System.Windows.Forms.CheckBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -75,88 +75,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
             // 
-            // label1
+            // chcEnabled
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Title:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Channel:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Time:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Directory:";
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(71, 23);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(301, 20);
-            this.txtTitle.TabIndex = 4;
-            // 
-            // cbChannel
-            // 
-            this.cbChannel.FormattingEnabled = true;
-            this.cbChannel.Location = new System.Drawing.Point(71, 50);
-            this.cbChannel.Name = "cbChannel";
-            this.cbChannel.Size = new System.Drawing.Size(301, 21);
-            this.cbChannel.TabIndex = 5;
-            // 
-            // cbStartTime
-            // 
-            this.cbStartTime.FormattingEnabled = true;
-            this.cbStartTime.Location = new System.Drawing.Point(71, 78);
-            this.cbStartTime.Name = "cbStartTime";
-            this.cbStartTime.Size = new System.Drawing.Size(120, 21);
-            this.cbStartTime.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(218, 81);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(10, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "-";
-            // 
-            // cbEndTime
-            // 
-            this.cbEndTime.FormattingEnabled = true;
-            this.cbEndTime.Location = new System.Drawing.Point(252, 78);
-            this.cbEndTime.Name = "cbEndTime";
-            this.cbEndTime.Size = new System.Drawing.Size(120, 21);
-            this.cbEndTime.TabIndex = 8;
-            // 
-            // txtDirectory
-            // 
-            this.txtDirectory.Location = new System.Drawing.Point(71, 106);
-            this.txtDirectory.Name = "txtDirectory";
-            this.txtDirectory.Size = new System.Drawing.Size(301, 20);
-            this.txtDirectory.TabIndex = 9;
+            this.chcEnabled.AutoSize = true;
+            this.chcEnabled.Location = new System.Drawing.Point(13, 195);
+            this.chcEnabled.Name = "chcEnabled";
+            this.chcEnabled.Size = new System.Drawing.Size(65, 17);
+            this.chcEnabled.TabIndex = 11;
+            this.chcEnabled.Text = "Enabled";
+            this.chcEnabled.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -173,45 +100,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Days";
             // 
-            // chcMon
+            // chcSat
             // 
-            this.chcMon.AutoSize = true;
-            this.chcMon.Location = new System.Drawing.Point(6, 19);
-            this.chcMon.Name = "chcMon";
-            this.chcMon.Size = new System.Drawing.Size(47, 17);
-            this.chcMon.TabIndex = 0;
-            this.chcMon.Text = "Mon";
-            this.chcMon.UseVisualStyleBackColor = true;
-            // 
-            // chcTue
-            // 
-            this.chcTue.AutoSize = true;
-            this.chcTue.Location = new System.Drawing.Point(59, 19);
-            this.chcTue.Name = "chcTue";
-            this.chcTue.Size = new System.Drawing.Size(45, 17);
-            this.chcTue.TabIndex = 1;
-            this.chcTue.Text = "Tue";
-            this.chcTue.UseVisualStyleBackColor = true;
-            // 
-            // chcWed
-            // 
-            this.chcWed.AutoSize = true;
-            this.chcWed.Location = new System.Drawing.Point(110, 19);
-            this.chcWed.Name = "chcWed";
-            this.chcWed.Size = new System.Drawing.Size(49, 17);
-            this.chcWed.TabIndex = 2;
-            this.chcWed.Text = "Wed";
-            this.chcWed.UseVisualStyleBackColor = true;
-            // 
-            // chcThu
-            // 
-            this.chcThu.AutoSize = true;
-            this.chcThu.Location = new System.Drawing.Point(165, 19);
-            this.chcThu.Name = "chcThu";
-            this.chcThu.Size = new System.Drawing.Size(45, 17);
-            this.chcThu.TabIndex = 3;
-            this.chcThu.Text = "Thu";
-            this.chcThu.UseVisualStyleBackColor = true;
+            this.chcSat.AutoSize = true;
+            this.chcSat.Location = new System.Drawing.Point(259, 19);
+            this.chcSat.Name = "chcSat";
+            this.chcSat.Size = new System.Drawing.Size(42, 17);
+            this.chcSat.TabIndex = 5;
+            this.chcSat.Text = "Sat";
+            this.chcSat.UseVisualStyleBackColor = true;
             // 
             // chcFri
             // 
@@ -223,15 +120,132 @@
             this.chcFri.Text = "Fri";
             this.chcFri.UseVisualStyleBackColor = true;
             // 
-            // chcSat
+            // chcThu
             // 
-            this.chcSat.AutoSize = true;
-            this.chcSat.Location = new System.Drawing.Point(259, 19);
-            this.chcSat.Name = "chcSat";
-            this.chcSat.Size = new System.Drawing.Size(42, 17);
-            this.chcSat.TabIndex = 5;
-            this.chcSat.Text = "Sat";
-            this.chcSat.UseVisualStyleBackColor = true;
+            this.chcThu.AutoSize = true;
+            this.chcThu.Location = new System.Drawing.Point(165, 19);
+            this.chcThu.Name = "chcThu";
+            this.chcThu.Size = new System.Drawing.Size(45, 17);
+            this.chcThu.TabIndex = 3;
+            this.chcThu.Text = "Thu";
+            this.chcThu.UseVisualStyleBackColor = true;
+            // 
+            // chcWed
+            // 
+            this.chcWed.AutoSize = true;
+            this.chcWed.Location = new System.Drawing.Point(110, 19);
+            this.chcWed.Name = "chcWed";
+            this.chcWed.Size = new System.Drawing.Size(49, 17);
+            this.chcWed.TabIndex = 2;
+            this.chcWed.Text = "Wed";
+            this.chcWed.UseVisualStyleBackColor = true;
+            // 
+            // chcTue
+            // 
+            this.chcTue.AutoSize = true;
+            this.chcTue.Location = new System.Drawing.Point(59, 19);
+            this.chcTue.Name = "chcTue";
+            this.chcTue.Size = new System.Drawing.Size(45, 17);
+            this.chcTue.TabIndex = 1;
+            this.chcTue.Text = "Tue";
+            this.chcTue.UseVisualStyleBackColor = true;
+            // 
+            // chcMon
+            // 
+            this.chcMon.AutoSize = true;
+            this.chcMon.Location = new System.Drawing.Point(6, 19);
+            this.chcMon.Name = "chcMon";
+            this.chcMon.Size = new System.Drawing.Size(47, 17);
+            this.chcMon.TabIndex = 0;
+            this.chcMon.Text = "Mon";
+            this.chcMon.UseVisualStyleBackColor = true;
+            // 
+            // txtDirectory
+            // 
+            this.txtDirectory.Location = new System.Drawing.Point(71, 106);
+            this.txtDirectory.Name = "txtDirectory";
+            this.txtDirectory.Size = new System.Drawing.Size(301, 20);
+            this.txtDirectory.TabIndex = 9;
+            // 
+            // cbEndTime
+            // 
+            this.cbEndTime.DropDownHeight = 150;
+            this.cbEndTime.FormattingEnabled = true;
+            this.cbEndTime.IntegralHeight = false;
+            this.cbEndTime.Location = new System.Drawing.Point(252, 78);
+            this.cbEndTime.Name = "cbEndTime";
+            this.cbEndTime.Size = new System.Drawing.Size(120, 21);
+            this.cbEndTime.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(218, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(10, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "-";
+            // 
+            // cbStartTime
+            // 
+            this.cbStartTime.DropDownHeight = 150;
+            this.cbStartTime.FormattingEnabled = true;
+            this.cbStartTime.IntegralHeight = false;
+            this.cbStartTime.Location = new System.Drawing.Point(71, 78);
+            this.cbStartTime.Name = "cbStartTime";
+            this.cbStartTime.Size = new System.Drawing.Size(120, 21);
+            this.cbStartTime.TabIndex = 6;
+            // 
+            // cbChannel
+            // 
+            this.cbChannel.FormattingEnabled = true;
+            this.cbChannel.Location = new System.Drawing.Point(71, 50);
+            this.cbChannel.Name = "cbChannel";
+            this.cbChannel.Size = new System.Drawing.Size(301, 21);
+            this.cbChannel.TabIndex = 5;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(71, 23);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(301, 20);
+            this.txtTitle.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Directory:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Time:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Channel:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Title:";
             // 
             // chcSun
             // 
@@ -242,16 +256,6 @@
             this.chcSun.TabIndex = 6;
             this.chcSun.Text = "Sun";
             this.chcSun.UseVisualStyleBackColor = true;
-            // 
-            // chcEnabled
-            // 
-            this.chcEnabled.AutoSize = true;
-            this.chcEnabled.Location = new System.Drawing.Point(13, 195);
-            this.chcEnabled.Name = "chcEnabled";
-            this.chcEnabled.Size = new System.Drawing.Size(65, 17);
-            this.chcEnabled.TabIndex = 11;
-            this.chcEnabled.Text = "Enabled";
-            this.chcEnabled.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 

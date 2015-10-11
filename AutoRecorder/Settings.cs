@@ -69,6 +69,5 @@ namespace AutoRecorder
                 return channels;
             }
         }
-
     }
 }
