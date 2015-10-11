@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoRecorder
 {
-    class Recording
+    public class Recording
     {
         private String title;
         private bool enabled;

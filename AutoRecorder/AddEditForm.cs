@@ -12,9 +12,14 @@ namespace AutoRecorder
 {
     public partial class AddEditForm : Form
     {
-        public AddEditForm()
+        public AddEditForm(Recording record, bool edit)
         {
             InitializeComponent();
+
+            if(edit)
+            {
+                txtTitle.Text = record.Title;
+            }
         }
     }
 }

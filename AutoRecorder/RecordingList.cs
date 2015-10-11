@@ -27,5 +27,11 @@ namespace AutoRecorder
                 return records;
             }
         }
+
+        public Recording RecordingNumber(int number)
+        {
+            return records[number];
+        }
+
     }
 }
