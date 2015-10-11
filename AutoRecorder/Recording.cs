@@ -12,15 +12,23 @@ namespace AutoRecorder
         private bool enabled;
         private String channel;
         private String directory;
-        private int[] weekdays;
+        private String[] weekdays;
+        private int startHour;
+        private int startMinute;
+        private int endHour;
+        private int endMinute;
 
-        public Recording(String title, bool enabled, String channel, String directory, int[] weekdays)
+        public Recording(String title, bool enabled, String channel, String directory, String[] weekdays, int startHour, int startMinute, int endHour, int endMinute)
         {
             this.title = title;
             this.enabled = enabled;
             this.channel = channel;
             this.directory = directory;
             this.weekdays = weekdays;
+            this.startHour = startHour;
+            this.startMinute = startMinute;
+            this.endHour = endHour;
+            this.endMinute = endMinute;
         }
 
         public String Title

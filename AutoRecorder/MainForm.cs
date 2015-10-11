@@ -35,6 +35,12 @@ namespace AutoRecorder
             TelnetHandler telnet = new TelnetHandler(settings);
 
             telnet.Connect();
+
+            RecordingList list = new RecordingList();
+            RecordFileReader reader = new RecordFileReader(list);
+
+            reader.ReadRecords(@".\Automaatti.py");
+
         }
     }
 }
