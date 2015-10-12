@@ -33,5 +33,13 @@ namespace AutoRecorder
             return records[number];
         }
 
+        public int RecordCount
+        {
+            get
+            {
+                return records.Count;
+            }
+        }
+
     }
 }

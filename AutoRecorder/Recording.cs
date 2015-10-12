@@ -147,11 +147,11 @@ namespace AutoRecorder
             {
                 if(startHour == -1)
                 {
-                    return "-1";
+                    return "";
                 }
                 else
                 {
-                    return "[" + startHour.ToString() + "," + startMinute.ToString() + "," + endHour.ToString() + "," + endMinute + ",";
+                    return startHour.ToString() + "," + startMinute.ToString() + "," + endHour.ToString() + "," + endMinute + ",";
                 }
             }
         }

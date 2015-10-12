@@ -103,8 +103,15 @@ namespace AutoRecorder
 
         private void toolUpload_Click(object sender, EventArgs e)
         {
-            RecordFileWriter writer = new RecordFileWriter("AutomaattiIn.py", RecList);
-            writer.WriteToFile();
+            if (RecList.RecordCount > 0)
+            {
+                RecordFileWriter writer = new RecordFileWriter("AutomaattiIn.py", RecList);
+                writer.WriteToFile();
+            }
+            else
+            {
+                MessageBox.Show("No records found!", "Error");
+            }
         }
     }
 }

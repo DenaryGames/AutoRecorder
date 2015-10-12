@@ -32,18 +32,31 @@ namespace AutoRecorder
             foreach(Recording record in list.Records)
             {
                 lines.Add(@"     {");
+
                 string _line = "         \"title\": \"" + record.Title + "\" ,"; 
                 lines.Add(_line);
-                _line = "         \"auto\": \"" + record.Enabled + "\" ,";
+
+                _line = "         \"auto\": " + Convert.ToInt32(record.Enabled) + " ,";
                 lines.Add(_line);
-                _line = "         \"manual\": \"" + record.Enabled + "\" ,";
+
+                _line = "         \"manual\": " + Convert.ToInt32(record.Enabled) + " ,";
                 lines.Add(_line);
-                _line = "         \"weekdays\": [" + record.DaysString + "] ,";
+
+                _line = "         \"weekdays\": [" + record.DaysString + ",] ,";
                 lines.Add(_line);
-                _line = "         \"hours\": [" + record.Times + "] ,";
-                lines.Add(_line);
-                _line = "         \"directory\": \"" + record.Directory + "\" ,";
-                lines.Add(_line);
+
+                if (!String.IsNullOrEmpty(record.Times))
+                {
+                    _line = "         \"hours\": [" + record.Times + "] ,";
+                    lines.Add(_line);
+                }
+
+                if (!String.IsNullOrEmpty(record.Directory))
+                {
+                    _line = "         \"directory\": \"" + record.Directory + "\" ,";
+                    lines.Add(_line);
+                }
+
                 _line = "         \"channel\": \"" + record.Channel + "\" ,";
                 lines.Add(_line);
                 lines.Add(@"     },");
@@ -59,6 +72,8 @@ namespace AutoRecorder
             lines.Add("confFile = open(\" % sAutomaatti.prof\" %profDir, \"wb\")");
             lines.Add("pickle.dump(conf, confFile)");
             lines.Add("confFile.close()");
+            lines.Add("");
+            lines.Add("");
         }
 
 
@@ -71,6 +86,7 @@ namespace AutoRecorder
             using (System.IO.StreamWriter file =
                         new System.IO.StreamWriter(@".\AutomaattiIn.py"))
             {
+                file.NewLine = "\n";
                 foreach (string line in lines)
                 {
                         file.WriteLine(line);
