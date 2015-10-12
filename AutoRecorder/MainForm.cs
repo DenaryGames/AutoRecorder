@@ -43,10 +43,10 @@ namespace AutoRecorder
             listView.Update();
             foreach (Recording record in list.Records)
             {
-                String[] row = { Convert.ToString(record.Enabled), record.DaysString, record.TimeString, record.Channel, record.Directory };
+                String[] row = { Convert.ToString(record.Enabled), record.DayNames, record.TimeString, record.Channel, record.Directory };
                 listView.Items.Add(record.Title).SubItems.AddRange(row);
-                listView.Update();
             }
+            listView.Update();
         }
 
         private void AddColumns()
@@ -59,6 +59,7 @@ namespace AutoRecorder
             listView.Columns.Add("Directory", 200);
         }
 
+        //Download
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             

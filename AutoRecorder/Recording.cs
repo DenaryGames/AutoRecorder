@@ -91,7 +91,68 @@ namespace AutoRecorder
         {
             get
             {
-                return String.Join(", ", weekdays);
+                string _tmp = String.Join(", ", weekdays);
+                _tmp = _tmp.Trim();
+                return _tmp.Remove(_tmp.Length - 1);
+            }
+        }
+
+        public String DayNames
+        {
+            get
+            {
+                string dayString = "";
+                foreach(string day in weekdays)
+                {
+                    if (!String.IsNullOrEmpty(day))
+                    {
+                        if (Convert.ToInt32(day) == 0)
+                        {
+                            dayString += "Mon ";
+                        }
+                        if (Convert.ToInt32(day) == 1)
+                        {
+                            dayString += "Tue ";
+                        }
+                        if (Convert.ToInt32(day) == 2)
+                        {
+                            dayString += "Wed ";
+                        }
+                        if (Convert.ToInt32(day) == 3)
+                        {
+                            dayString += "Thu ";
+                        }
+                        if (Convert.ToInt32(day) == 4)
+                        {
+                            dayString += "Fri ";
+                        }
+                        if (Convert.ToInt32(day) == 5)
+                        {
+                            dayString += "Sat ";
+                        }
+                        if (Convert.ToInt32(day) == 6)
+                        {
+                            dayString += "Sun";
+                        }
+                    }
+                }
+
+                return dayString;
+            }
+        }
+
+        public String Times
+        {
+            get
+            {
+                if(startHour == -1)
+                {
+                    return "-1";
+                }
+                else
+                {
+                    return "[" + startHour.ToString() + "," + startMinute.ToString() + "," + endHour.ToString() + "," + endMinute + ",";
+                }
             }
         }
 
