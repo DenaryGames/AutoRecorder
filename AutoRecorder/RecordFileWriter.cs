@@ -13,10 +13,10 @@ namespace AutoRecorder
         private RecordingList list;
 
 
-        public RecordFileWriter(string fileName, RecordingList recordigns)
+        public RecordFileWriter(string fileName, RecordingList recordings)
         {
             this.file = fileName;
-            this.list = recordigns;
+            this.list = recordings;
         }
 
         private void WriteHeader()
@@ -53,18 +53,29 @@ namespace AutoRecorder
         private void WriteFooter()
         {
             lines.Add(")");
-            lines.Add(@"profDir = locals().get("SearchProfilesDir", "./ ")");
-            lines.Add(@"print "profile for / etc / enigma2 / AutoRecorder / SearchProfiles / Automaatti.prof goes to", profDir") ;
-            lines.Add(@"if profDir[-1] != " / ": profDir += " / "");
-            lines.Add(@"confFile = open(" % sAutomaatti.prof" %profDir, "wb")");
-            lines.Add(@"pickle.dump(conf, confFile)");
-            lines.Add(@"confFile.close()");
+            lines.Add("profDir = locals().get(\"SearchProfilesDir\", \"./ \")");
+            lines.Add("print \"profile for / etc / enigma2 / AutoRecorder / SearchProfiles / Automaatti.prof goes to\", profDir") ;
+            lines.Add("if profDir[-1] != \" / \": profDir += \" / \"");
+            lines.Add("confFile = open(\" % sAutomaatti.prof\" %profDir, \"wb\")");
+            lines.Add("pickle.dump(conf, confFile)");
+            lines.Add("confFile.close()");
         }
 
 
-        private void WriteToFile()
+        public void WriteToFile()
         {
+            WriteHeader();
+            WriteRecordings();
+            WriteFooter();
 
+            using (System.IO.StreamWriter file =
+                        new System.IO.StreamWriter(@".\AutomaattiIn.py"))
+            {
+                foreach (string line in lines)
+                {
+                        file.WriteLine(line);
+                }
+            }
         }
     }
 }

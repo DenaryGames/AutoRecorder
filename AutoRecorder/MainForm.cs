@@ -100,5 +100,11 @@ namespace AutoRecorder
                 }
             }
         }
+
+        private void toolUpload_Click(object sender, EventArgs e)
+        {
+            RecordFileWriter writer = new RecordFileWriter("AutomaattiIn.py", RecList);
+            writer.WriteToFile();
+        }
     }
 }
