@@ -12,9 +12,15 @@ namespace AutoRecorder
 {
     public partial class AddEditForm : Form
     {
-        public AddEditForm(Recording record, bool edit, List<String> channels)
+
+        bool edit;
+        Recording record;
+
+        public AddEditForm(Recording recordIn, bool editIn, List<String> channels)
         {
             InitializeComponent();
+            this.record = recordIn;
+            this.edit = editIn;
 
             if(edit)
             {
@@ -98,6 +104,11 @@ namespace AutoRecorder
                 
 
             }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.record.Title = txtTitle.Text;
         }
     }
 }

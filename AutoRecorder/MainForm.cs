@@ -19,13 +19,9 @@ namespace AutoRecorder
         public MainForm()
         {
             InitializeComponent();
-            listView.Columns.Add("Title", 200);
-            listView.Columns.Add("Enabled", 60);
-            listView.Columns.Add("Days", 200);
-            listView.Columns.Add("Time", 150);
-            listView.Columns.Add("Channel", 70);
-            listView.Columns.Add("Directory", 200);
-            
+            this.AddColumns();
+            listView.Update();
+
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,12 +37,26 @@ namespace AutoRecorder
 
         private void ShowRecordings(RecordingList list)
         {
-            foreach(Recording record in list.Records)
+            listView.Clear();
+            listView.Update();
+            this.AddColumns();
+            listView.Update();
+            foreach (Recording record in list.Records)
             {
                 String[] row = { Convert.ToString(record.Enabled), record.DaysString, record.TimeString, record.Channel, record.Directory };
                 listView.Items.Add(record.Title).SubItems.AddRange(row);
                 listView.Update();
             }
+        }
+
+        private void AddColumns()
+        {
+            listView.Columns.Add("Title", 200);
+            listView.Columns.Add("Enabled", 60);
+            listView.Columns.Add("Days", 200);
+            listView.Columns.Add("Time", 150);
+            listView.Columns.Add("Channel", 70);
+            listView.Columns.Add("Directory", 200);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -77,6 +87,16 @@ namespace AutoRecorder
 
                 AddEditForm form = new AddEditForm(RecList.RecordingNumber(pos), true, settings.Channels);
                 form.ShowDialog(this);
+
+                if (form.DialogResult == DialogResult.OK)
+                {
+                    this.ShowRecordings(RecList);
+                    form.Dispose();
+                }
+                else
+                {
+                    form.Dispose();
+                }
             }
         }
     }
