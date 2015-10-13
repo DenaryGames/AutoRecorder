@@ -124,11 +124,6 @@ namespace AutoRecorder
 
         private void toolAdd_Click(object sender, EventArgs e)
         {
-            ListView.SelectedListViewItemCollection items = listView.SelectedItems;
-
-            ListViewItem lvItem = items[0];
-            int pos = lvItem.Index;
-
             AddEditForm form = new AddEditForm(false, settings.Channels, RecList);
             form.ShowDialog(this);
 
@@ -141,6 +136,17 @@ namespace AutoRecorder
             {
                 form.Dispose();
             }
+        }
+
+        private void toolRemove_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection items = listView.SelectedItems;
+
+            ListViewItem lvItem = items[0];
+            int pos = lvItem.Index;
+
+            RecList.Remove(pos);
+            this.ShowRecordings(RecList);
         }
     }
 }

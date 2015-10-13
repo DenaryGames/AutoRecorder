@@ -28,6 +28,11 @@ namespace AutoRecorder
             }
         }
 
+        public void Remove(int pos)
+        {
+            records.RemoveAt(pos);
+        }
+
         public Recording RecordingNumber(int number)
         {
             return records[number];

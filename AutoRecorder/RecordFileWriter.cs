@@ -42,7 +42,7 @@ namespace AutoRecorder
                 _line = "         \"manual\": " + Convert.ToInt32(record.Enabled) + " ,";
                 lines.Add(_line);
 
-                _line = "         \"weekdays\": [" + record.DaysString + ",] ,";
+                _line = "         \"weekdays\": [" + record.DaysString + "] ,";
                 lines.Add(_line);
 
                 if (!String.IsNullOrEmpty(record.Times))
@@ -66,10 +66,10 @@ namespace AutoRecorder
         private void WriteFooter()
         {
             lines.Add(")");
-            lines.Add("profDir = locals().get(\"SearchProfilesDir\", \"./ \")");
-            lines.Add("print \"profile for / etc / enigma2 / AutoRecorder / SearchProfiles / Automaatti.prof goes to\", profDir") ;
-            lines.Add("if profDir[-1] != \" / \": profDir += \" / \"");
-            lines.Add("confFile = open(\" % sAutomaatti.prof\" %profDir, \"wb\")");
+            lines.Add("profDir = locals().get(\"SearchProfilesDir\", \"./\")");
+            lines.Add("print \"profile for /etc/enigma2/AutoRecorder/SearchProfiles/Automaatti.prof goes to\", profDir") ;
+            lines.Add("if profDir[-1] != \"/\": profDir += \"/\"");
+            lines.Add("confFile = open(\"%sAutomaatti.prof\" %profDir, \"wb\")");
             lines.Add("pickle.dump(conf, confFile)");
             lines.Add("confFile.close()");
             lines.Add("");

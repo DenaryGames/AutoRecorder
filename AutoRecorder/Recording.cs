@@ -96,7 +96,7 @@ namespace AutoRecorder
         {
             set
             {
-                StartMinute = value;
+                startMinute = value;
             }
         }
 
@@ -132,9 +132,9 @@ namespace AutoRecorder
         {
             get
             {
-                string _tmp = String.Join(", ", weekdays);
+                string _tmp = String.Join(",", weekdays);
                 _tmp = _tmp.Trim();
-                return _tmp.Remove(_tmp.Length - 1);
+                return _tmp;//.Remove(_tmp.Length - 1);
             }
         }
 

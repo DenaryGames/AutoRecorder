@@ -199,6 +199,7 @@
             this.toolRemove.Name = "toolRemove";
             this.toolRemove.Size = new System.Drawing.Size(23, 22);
             this.toolRemove.Text = "Remove";
+            this.toolRemove.Click += new System.EventHandler(this.toolRemove_Click);
             // 
             // toolStripSeparator2
             // 
@@ -234,6 +235,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView.FullRowSelect = true;
             this.listView.Location = new System.Drawing.Point(12, 52);
+            this.listView.MultiSelect = false;
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(829, 310);
             this.listView.TabIndex = 3;

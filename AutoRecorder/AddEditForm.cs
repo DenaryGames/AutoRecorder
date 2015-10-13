@@ -95,41 +95,53 @@ namespace AutoRecorder
                 list.AddRecording(record);
             }
             this.record.Title = txtTitle.Text;
-            this.record.Channel = cbChannel.SelectedText;
-            string[] _time = cbStartTime.SelectedText.Split(':');
-            this.record.StartHour = Convert.ToInt32(_time[0]);
-            this.record.StartMinute = Convert.ToInt32(_time[1]);
-            _time = cbEndTime.SelectedText.Split(':');
-            this.record.EndHour = Convert.ToInt32(_time[0]);
-            this.record.EndMinute = Convert.ToInt32(_time[1]);
+            this.record.Channel = cbChannel.Text;
+
+            if (!cbStartTime.Text.Equals(""))
+            {
+                string[] _time = cbStartTime.Text.Split(':');
+                this.record.StartHour = Convert.ToInt32(_time[0]);
+                this.record.StartMinute = Convert.ToInt32(_time[1]);
+                _time = cbEndTime.Text.Split(':');
+                this.record.EndHour = Convert.ToInt32(_time[0]);
+                this.record.EndMinute = Convert.ToInt32(_time[1]);
+            }
+            else
+            {
+                this.record.StartHour = -1;
+                this.record.StartMinute = -1;
+                this.record.EndHour = -1;
+                this.record.EndMinute = -1;
+            }
+
             this.record.Directory = txtDirectory.Text;
 
             List<String> days = new List<String>();
-            if(chcMon.Enabled)
+            if(chcMon.Checked)
             {
                 days.Add("0");
             }
-            if (chcTue.Enabled)
+            if (chcTue.Checked)
             {
                 days.Add("1");
             }
-            if (chcWed.Enabled)
+            if (chcWed.Checked)
             {
                 days.Add("2");
             }
-            if (chcThu.Enabled)
+            if (chcThu.Checked)
             {
                 days.Add("3");
             }
-            if (chcFri.Enabled)
+            if (chcFri.Checked)
             {
                 days.Add("4");
             }
-            if (chcSat.Enabled)
+            if (chcSat.Checked)
             {
                 days.Add("5");
             }
-            if (chcSun.Enabled)
+            if (chcSun.Checked)
             {
                 days.Add("6");
             }
