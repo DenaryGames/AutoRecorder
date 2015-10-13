@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoRecorder
 {
-    class RecordingList
+    public class RecordingList
     {
         private List<Recording> records;
 

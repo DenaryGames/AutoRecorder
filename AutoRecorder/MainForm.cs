@@ -72,9 +72,17 @@ namespace AutoRecorder
             RecordFileReader reader = new RecordFileReader(list);
             RecList = list;
 
-            reader.ReadRecords(@".\Automaatti.py");
+            if(reader.CheckFile(@".\AutomaattiOut.py"))
+            {
+                reader.ReadRecords(@".\AutomaattiOut.py");
 
-            this.ShowRecordings(list);
+                this.ShowRecordings(list);
+            }
+            else
+            {
+                MessageBox.Show("File download failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void listView_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -111,6 +119,27 @@ namespace AutoRecorder
             else
             {
                 MessageBox.Show("No records found!", "Error");
+            }
+        }
+
+        private void toolAdd_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection items = listView.SelectedItems;
+
+            ListViewItem lvItem = items[0];
+            int pos = lvItem.Index;
+
+            AddEditForm form = new AddEditForm(false, settings.Channels, RecList);
+            form.ShowDialog(this);
+
+            if (form.DialogResult == DialogResult.OK)
+            {
+                this.ShowRecordings(RecList);
+                form.Dispose();
+            }
+            else
+            {
+                form.Dispose();
             }
         }
     }

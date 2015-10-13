@@ -19,9 +19,24 @@ namespace AutoRecorder
             this.list = recordList;
         }
 
+        public bool CheckFile(String fileName)
+        {
+            String[] lines = System.IO.File.ReadAllLines(fileName);
+
+            foreach(string line in lines)
+            {
+                if(line.Contains("confFile.close()"))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public void ReadRecords(String fileName)
         {
-            String[] lines = System.IO.File.ReadAllLines(@".\AutomaattiOut.py");
+            String[] lines = System.IO.File.ReadAllLines(fileName);
             bool titleReady = false;
 
             String title = "";

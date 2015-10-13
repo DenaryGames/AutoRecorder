@@ -15,6 +15,14 @@ namespace AutoRecorder
 
         bool edit;
         Recording record;
+        RecordingList list;
+
+        public AddEditForm(bool editIn, List<String> channels, RecordingList list)
+        {
+            InitializeComponent();
+            PopulateBasics(channels);
+            this.list = list;
+        }
 
         public AddEditForm(Recording recordIn, bool editIn, List<String> channels)
         {
@@ -27,33 +35,9 @@ namespace AutoRecorder
                 txtTitle.Text = record.Title;
                 txtDirectory.Text = record.Directory;
 
-                foreach(String channel in channels)
-                {
-                    cbChannel.Items.Add(channel);
-                }
+                PopulateBasics(channels);
 
                 cbChannel.SelectedIndex = cbChannel.FindStringExact(record.Channel);
-
-                int hour = 0;
-                int min = 0;
-                string fmt = "00";
-                cbStartTime.Items.Add("");
-                cbEndTime.Items.Add("");
-                for (int i = 0; i < 48; i++)
-                {
-                    cbStartTime.Items.Add(hour.ToString(fmt) + ":" + min.ToString(fmt));
-                    cbEndTime.Items.Add(hour.ToString(fmt) + ":" + min.ToString(fmt));
-                    if (min == 0)
-                    {
-                        min = 30;
-                    }
-                    else
-                    {
-                        min = 0;
-                        hour++;
-                    }
-                    
-                }
 
                 cbStartTime.SelectedIndex = cbStartTime.FindStringExact(record.StartTimeString);
                 cbEndTime.SelectedIndex = cbEndTime.FindStringExact(record.EndTimeString);
@@ -98,17 +82,93 @@ namespace AutoRecorder
                     if (day.Contains("6"))
                     {
                         chcSun.Checked = true;
-                    }
-                    
+                    }                 
                 }
-                
-
             }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if(!edit)
+            {
+                this.record = new Recording();
+                list.AddRecording(record);
+            }
             this.record.Title = txtTitle.Text;
+            this.record.Channel = cbChannel.SelectedText;
+            string[] _time = cbStartTime.SelectedText.Split(':');
+            this.record.StartHour = Convert.ToInt32(_time[0]);
+            this.record.StartMinute = Convert.ToInt32(_time[1]);
+            _time = cbEndTime.SelectedText.Split(':');
+            this.record.EndHour = Convert.ToInt32(_time[0]);
+            this.record.EndMinute = Convert.ToInt32(_time[1]);
+            this.record.Directory = txtDirectory.Text;
+
+            List<String> days = new List<String>();
+            if(chcMon.Enabled)
+            {
+                days.Add("0");
+            }
+            if (chcTue.Enabled)
+            {
+                days.Add("1");
+            }
+            if (chcWed.Enabled)
+            {
+                days.Add("2");
+            }
+            if (chcThu.Enabled)
+            {
+                days.Add("3");
+            }
+            if (chcFri.Enabled)
+            {
+                days.Add("4");
+            }
+            if (chcSat.Enabled)
+            {
+                days.Add("5");
+            }
+            if (chcSun.Enabled)
+            {
+                days.Add("6");
+            }
+
+            string[] dayNumbers = days.ToArray();
+
+            this.record.Days = dayNumbers;
+
+            this.record.Enabled = chcEnabled.Enabled;
+
+        }
+
+        private void PopulateBasics(List<String> channels)
+        {
+            foreach (String channel in channels)
+            {
+                cbChannel.Items.Add(channel);
+            }
+
+            int hour = 0;
+            int min = 0;
+            string fmt = "00";
+            cbStartTime.Items.Add("");
+            cbEndTime.Items.Add("");
+            for (int i = 0; i < 48; i++)
+            {
+                cbStartTime.Items.Add(hour.ToString(fmt) + ":" + min.ToString(fmt));
+                cbEndTime.Items.Add(hour.ToString(fmt) + ":" + min.ToString(fmt));
+                if (min == 0)
+                {
+                    min = 30;
+                }
+                else
+                {
+                    min = 0;
+                    hour++;
+                }
+
+            }
         }
     }
 }

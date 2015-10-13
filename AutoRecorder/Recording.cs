@@ -18,6 +18,11 @@ namespace AutoRecorder
         private int endHour;
         private int endMinute;
 
+        public Recording()
+        {
+
+        }
+
         public Recording(String title, bool enabled, String channel, String directory, String[] weekdays, int startHour, int startMinute, int endHour, int endMinute)
         {
             this.title = title;
@@ -79,11 +84,47 @@ namespace AutoRecorder
             }
         }
 
+        public int StartHour
+        {
+            set
+            {
+                startHour = value;
+            }
+        }
+
+        public int StartMinute
+        {
+            set
+            {
+                StartMinute = value;
+            }
+        }
+
+        public int EndHour
+        {
+            set
+            {
+                endHour = value;
+            }
+        }
+
+        public int EndMinute
+        {
+            set
+            {
+                endMinute = value;
+            }
+        }
+
         public String[] Days
         {
             get
             {
                 return weekdays;
+            }
+            set
+            {
+                weekdays = value;
             }
         }
 
