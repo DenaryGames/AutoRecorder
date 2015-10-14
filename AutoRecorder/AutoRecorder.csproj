@@ -66,7 +66,6 @@
     <Compile Include="Recording.cs" />
     <Compile Include="RecordingList.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="SetTopBox.cs" />
     <Compile Include="TelnetHandler.cs" />
     <Compile Include="TelnetInterface.cs" />
     <Compile Include="XMLUtils.cs" />
